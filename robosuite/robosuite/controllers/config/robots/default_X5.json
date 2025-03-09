@@ -1,0 +1,16 @@
+{
+  "type": "JOINT_POSITION",
+  "input_max": 1,
+  "input_min": -1,
+  "output_max": [2.8973, 1.7628, 2.8973, 3.0718, 2.8973, 0.0175, 2.8973],
+  "output_min": [-2.8973, -1.7628, -2.8973, -3.0718, -2.8973, -3.0543, -2.8973],
+  "kp": 50,
+  "damping_ratio": 1,
+  "impedance_mode": "fixed",
+  "kp_limits": [0, 100],
+  "damping_ratio_limits": [0, 10],
+  "position_limits": null,
+  "control_delta": true,
+  "interpolation": null,
+  "ramp_ratio": 0.2
+}

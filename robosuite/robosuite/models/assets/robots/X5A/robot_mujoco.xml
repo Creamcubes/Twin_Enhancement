@@ -1,0 +1,96 @@
+<mujoco model="X5A">
+  <compiler angle="radian" meshdir="C:\Users\86136\anaconda3\envs\robosuite\Lib\site-packages\robosuite\models\assets\robots\X5A\meshes\"/>
+  <actuator>
+    <!-- Physical limits of the actuator. -->
+    <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint1" name="torq_j1"/>
+    <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint2" name="torq_j2"/>
+    <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint3" name="torq_j3"/>
+    <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint4" name="torq_j4"/>
+    <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint5" name="torq_j5"/>
+    <motor ctrllimited="true" ctrlrange="-12.0 12.0" joint="joint6" name="torq_j6"/>
+    <!-- <motor ctrllimited="true" ctrlrange="-12.0 12.0" joint="joint7" name="torq_j7"/> -->
+  </actuator>
+  <asset>
+    <mesh name="base_link" file="base_link.STL"/>
+    <mesh name="link1" file="link1.STL"/>
+    <mesh name="link2" file="link2.STL"/>
+    <mesh name="link3" file="link3.STL"/>
+    <mesh name="link4" file="link4.STL"/>
+    <mesh name="link5" file="link5.STL"/>
+    <mesh name="link6" file="link6.STL"/>
+    <!-- <mesh name="link7" file="link7.STL"/>
+    <mesh name="link8" file="link8.STL"/> -->
+  </asset>
+
+  <worldbody>
+    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.75294 0.75294 0.75294 1" mesh="base_link"/>
+    <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="base_link"/>
+    <body name="base" pos="0 0 0">
+      <site name="right_center" pos="0 0 0" size="0.01" rgba="1 0.3 0.3 1" group="2"/>
+      <!-- robot view -->
+      <camera mode="fixed" name="robotview" pos="1.0 0 0.4" quat="0.653 0.271 0.271 0.653"/>
+      <inertial diaginertia="0 0 0" mass="0" pos="0 0 0"/>
+        <!-- mount attached here -->
+      <body name="link1" pos="0 0 0.0605">
+        <inertial pos="0.0054231 -0.0080289 0.017086" quat="0.653281 0.653281 -0.270598 0.270598" mass="0.066982" diaginertia="9e-05 7e-05 3e-05"/>
+        <joint name="joint1" pos="0 0 0" axis="0 0 1" range="-10 10" actuatorfrcrange="-100 100"/>
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="link1"/>
+        <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" mesh="link1"/>
+        <body name="link2" pos="0.02 0 0.04">
+          <inertial pos="-0.13237 0.0020852 0.00010549" quat="7.64729e-05 0.706196 -0.000379919 0.708016" mass="1.0795" diaginertia="0.0160501 0.01599 0.000509891"/>
+          <joint name="joint2" pos="0 0 0" axis="0 1 0" range="-10 10" actuatorfrcrange="-100 100"/>
+          <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.75294 0.75294 0.75294 1" mesh="link2"/>
+          <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="link2"/>
+          <body name="link3" pos="-0.264 0 0" quat="-3.67321e-06 1 0 0">
+            <inertial pos="0.18531 0.00068376 -0.051638" quat="0.223261 0.638184 0.206685 0.707218" mass="0.54534" diaginertia="0.00424842 0.004221 0.000320578"/>
+            <joint name="joint3" pos="0 0 0" axis="0 1 0" range="-10 10" actuatorfrcrange="-100 100"/>
+            <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 0.98431 0.96471 1" mesh="link3"/>
+            <geom type="mesh" rgba="1 0.98431 0.96471 1" mesh="link3"/>
+            <body name="link4" pos="0.245 0 -0.056">
+              <inertial pos="0.040231 0.0044807 -0.035335" quat="0.911288 -0.0751532 0.308689 -0.261949" mass="0.11714" diaginertia="0.000275643 0.00021286 7.14977e-05"/>
+              <joint name="joint4" pos="0 0 0" axis="0 1 0" range="-10 10" actuatorfrcrange="-100 100"/>
+              <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.79216 0.81961 0.92941 1" mesh="link4"/>
+              <geom type="mesh" rgba="0.79216 0.81961 0.92941 1" mesh="link4"/>
+              <body name="link5" pos="0.06775 0.0005 -0.0865">
+                <inertial pos="0.003612 -1.5455e-05 0.055214" quat="0.998188 0 -0.0601752 0" mass="0.63488" diaginertia="0.000838471 0.00082 0.000251529"/>
+                <joint name="joint5" pos="0 0 0" axis="0 0 1" range="-10 10" actuatorfrcrange="-100 100"/>
+                <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.69804 0.69804 0.69804 1" mesh="link5"/>
+                <geom type="mesh" rgba="0.69804 0.69804 0.69804 1" mesh="link5"/>
+                <body name="link6" pos="0.02895 0 0.0865" quat="-3.67321e-06 -1 0 0">
+                  <inertial pos="0.041697 2.4368e-05 0.00014464" quat="0.5 0.5 -0.5 0.5" mass="0.44089" diaginertia="0.0005 0.00038 0.00028"/>
+                  <joint name="joint6" pos="0 0 0" axis="1 0 0" range="-10 10" actuatorfrcrange="-100 100"/>
+                  <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.89804 0.91765 0.92941 1" mesh="link6"/>
+                  <geom type="mesh" rgba="0.89804 0.91765 0.92941 1" mesh="link6"/>
+                  <!-- <body name="link7" pos="0.08657 0.024896 -0.0002436">
+                    <inertial pos="-0.00035522 -0.007827 -0.0029883" quat="0.5 0.5 0.5 0.5" mass="0.064798" diaginertia="3e-05 3e-05 2e-05"/>
+                    <joint name="joint7" pos="0 0 0" axis="0 1 0" type="slide" range="0 0.044" actuatorfrcrange="-100 100"/>
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="link7"/>
+                    <geom type="mesh" rgba="1 1 1 1" mesh="link7"/>
+                  </body>
+                  <body name="link8" pos="0.08657 -0.0249 -0.00024366">
+                    <inertial pos="-0.00035522 0.0078277 0.0024201" quat="0.5 0.5 0.5 0.5" mass="0.064798" diaginertia="3e-05 3e-05 2e-05"/>
+                    <joint name="joint8" pos="0 0 0" axis="0 -1 0" type="slide" range="0 0.044" actuatorfrcrange="-100 100"/>
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="link8"/>
+                    <geom type="mesh" rgba="1 1 1 1" mesh="link8"/>
+                  </body> -->
+                  <body name="right_hand" pos="0 0 0.1065" quat="0.924 0 0 -0.383">
+                      <!-- This sites were added for visualization. They are all standardized between models-->
+                      <!-- Position mimics the gripper attachment point (right_hand) -->
+                      <!--  Y-axis should be perpendicular to grasping motion, and Z-axis should point out of the robot eef -->
+                      <site name="ee" pos="0 0 0" size="0.01 0.01 0.01" rgba="0 0 1 1" type="sphere" group="1"/>
+                      <site name="ee_x" pos="0 0 0" size="0.005 .1"  quat="0.707105 0.707108 0 0 " rgba="1 0 0 0" type="cylinder" group="1"/>
+                      <site name="ee_z" pos="0 0 0" size="0.005 .1" quat="0.707105 0 0 0.707108" rgba="0 0 1 0" type="cylinder" group="1"/>
+                      <site name="ee_y" pos="0 0 0" size="0.005 .1" quat="0.707105 0 0.707108 0 " rgba="0 1 0 0" type="cylinder" group="1"/>
+                      <!-- This camera points out from the eef. -->
+                      <camera mode="fixed" name="eye_in_hand" pos="0.05 0 0" quat="0 0.707108 0.707108 0" fovy="75"/>
+                      <!-- to add gripper -->
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

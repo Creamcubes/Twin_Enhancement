@@ -10,6 +10,6 @@ from .spot_arm import SpotArm
 from .tiago_robot import Tiago
 from .gr1_robot import GR1, GR1FixedLowerBody, GR1ArmsOnly, GR1FloatingBody
 from .x5a_robot import X5A
-
+from .x5_robot import X5
 
 # C:\Users\86136\anaconda3\envs\robosuite\Lib\site-packages\mujoco\mujoco330\bin\compile.exe C:\Users\86136\anaconda3\envs\robosuite\Lib\site-packages\robosuite\models\assets\robots\X5A\robot.urdf C:\Users\86136\anaconda3\envs\robosuite\Lib\site-packages\robosuite\models\assets\robots\X5A\test\robot_mujoco.xml

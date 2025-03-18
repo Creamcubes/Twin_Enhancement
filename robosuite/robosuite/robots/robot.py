@@ -254,11 +254,13 @@ class Robot(object):
             init_qpos += noise
 
         # Set initial position in sim
-        #print(len(self.sim.data.qpos[self._ref_joint_pos_indexes]))
+        print(f'qpos_len:{len(self.sim.data.qpos[self._ref_joint_pos_indexes])}')
         if len(self.sim.data.qpos[self._ref_joint_pos_indexes])==7:
             self.sim.data.qpos[self._ref_joint_pos_indexes] = init_qpos
-        if len(self.sim.data.qpos[self._ref_joint_pos_indexes])==6:
+        elif len(self.sim.data.qpos[self._ref_joint_pos_indexes])==6:
             self.sim.data.qpos[self._ref_joint_pos_indexes] = init_qpos[:6]
+        elif len(self.sim.data.qpos[self._ref_joint_pos_indexes])==5:
+            self.sim.data.qpos[self._ref_joint_pos_indexes] = init_qpos[:5]
 
         if self.robot_model.init_base_qpos is not None:
             self.sim.data.qpos[self._ref_base_joint_pos_indexes] = self.robot_model.init_base_qpos

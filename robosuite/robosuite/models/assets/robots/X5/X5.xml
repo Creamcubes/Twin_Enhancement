@@ -21,9 +21,10 @@
 
   <worldbody>
     <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.75294 0.75294 0.75294 1" mesh="base_link"/>
-    <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="base_link"/>
+    <site name="right_center" pos="0 0 0" size="0.01" rgba="1 0.3 0.3 1" group="2"/>
+    <!-- <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="base_link"/> -->
     <body name="link1" pos="0 0 0.0603">
-      <site name="right_center" pos="0 0 0" size="0.01" rgba="1 0.3 0.3 1" group="2"/>
+      
       <inertial pos="0.00571213 0.0002547 0.0175066" quat="0.680193 0.680193 -0.193229 0.193229" mass="0.064" diaginertia="8.61803e-05 6.38197e-05 3e-05"/>
       <joint name="joint1" pos="0 0 0" axis="0 0 1" range="-10 10" actuatorfrcrange="-100 100"/>
       <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.75294 0.75294 0.75294 1" mesh="link1"/>

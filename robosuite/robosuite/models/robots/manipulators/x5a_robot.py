@@ -15,11 +15,11 @@ class X5A(ManipulatorModel):
     arms = ["right"]
 
     def __init__(self, idn=0):
-        #super().__init__(xml_path_completion("robots/X5A/robot_mujoco.xml"), idn=idn)
-        super().__init__(xml_path_completion("robots/X5/X5.xml"), idn=idn)
+        super().__init__(xml_path_completion("robots/X5A/robot_mujoco.xml"), idn=idn)
+        #super().__init__(xml_path_completion("robots/X5/X5.xml"), idn=idn)
 
         # Set joint damping
-        self.set_joint_attribute(attrib="damping", values=np.array((0.1, 0.1, 0.1, 0.1, 0.1, 0.01)))
+        self.set_joint_attribute(attrib="damping", values=np.array((0.1, 0.1, 0.1, 0.1, 0.1)))
 
     @property
     def default_base(self):
@@ -27,7 +27,7 @@ class X5A(ManipulatorModel):
 
     @property
     def default_gripper(self):
-        return {"right": "PandaGripper"}
+        return {"right": "X5AGripper"}
 
     @property
     def default_controller_config(self):

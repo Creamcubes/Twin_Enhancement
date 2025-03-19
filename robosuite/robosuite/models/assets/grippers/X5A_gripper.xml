@@ -1,0 +1,41 @@
+<mujoco model="X5A">
+
+  <asset>
+    <mesh name="link6" file="meshes/X5A_gripper/link6.STL"/>
+    <mesh name="link7" file="meshes/X5A_gripper/link7.STL"/>
+    <mesh name="link8" file="meshes/X5A_gripper/link8.STL"/>
+  </asset>
+  <actuator>
+      <position ctrllimited="true" ctrlrange="0.0 0.044" joint="finger_joint1" kp="1000" name="gripper_finger_joint1" forcelimited="true" forcerange="-20 20"/>
+      <position ctrllimited="true" ctrlrange="-0.044 0.0" joint="finger_joint2" kp="1000" name="gripper_finger_joint2" forcelimited="true" forcerange="-20 20"/>
+  </actuator>
+  <worldbody>
+    <body name="eef" pos="0 0 0" quat="0.707107 0 0 -0.707107">
+      <site name="ft_frame" pos="0 0 0" size="0.01 0.01 0.01" rgba="1 0 0 1" type="sphere" group="1" />
+      <!-- This site was added for visualization. -->
+      <site name="grip_site" pos="0 0 -0.1775" size="0.01 0.01 0.01" rgba="1 0 0 0.5" type="sphere" group="1"/>
+      <!-- This site was added for visualization. -->
+      <site name="grip_site_cylinder" pos="0 0 0.1399" size="0.005 10" rgba="0 1 0 0.3" type="cylinder" group="1"/>
+      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.89804 0.91765 0.92941 1" mesh="link6"/>
+      <geom type="mesh" rgba="0.89804 0.91765 0.92941 1" mesh="link6"/>
+      <body name="leftfinger" pos="0.08657 0.024896 -0.0002436">
+        <inertial pos="-0.00035522 -0.007827 -0.0029883" quat="0.5 0.5 0.5 0.5" mass="0.064798" diaginertia="3e-05 3e-05 2e-05"/>
+        <joint name="finger_joint2" pos="0 0 0" axis="0 -1 0" type="slide" range="-0.044 0" actuatorfrcrange="-100 100"/>
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="link7"/>
+        <geom type="mesh" rgba="1 1 1 1" mesh="link7"/>
+      </body>
+      <body name="rightfinger" pos="0.08657 -0.0249 -0.00024366">
+        <inertial pos="-0.00035522 0.0078277 0.0024201" quat="0.5 0.5 0.5 0.5" mass="0.064798" diaginertia="3e-05 3e-05 2e-05"/>
+        <joint name="finger_joint1" pos="0 0 0" axis="0 1 0" type="slide" range="0 0.044" actuatorfrcrange="-100 100"/>
+        
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="link8"/>
+        <geom type="mesh" rgba="1 1 1 1" mesh="link8"/>
+      </body>
+    </body>
+  </worldbody>
+  <sensor>
+          <force name="force_ee" site="ft_frame"/>
+          <torque name="torque_ee" site="ft_frame"/>
+  </sensor>
+
+</mujoco>

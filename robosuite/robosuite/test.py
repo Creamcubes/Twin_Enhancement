@@ -8,7 +8,7 @@ robot = "X5A"#"Panda"
 # create environment instance
 env = suite.make(
     env_name="Stack", # try with other tasks like "Stack" and "Door"
-    robots="X5",  # try with other robots like "Sawyer" and "Jaco"   #"Panda"   "X5A"
+    robots="X5A",  # try with other robots like "Sawyer" and "Jaco"   #"Panda"   "X5A"
     has_renderer=True,
     has_offscreen_renderer=False,
     use_camera_obs=False,
@@ -20,8 +20,9 @@ for i in range(1000):
     random_number = np.random.normal()
     #print(f'shape:{env.action_spec[0].shape}')
     #action = np.random.randn(*env.action_spec[0].shape) * 0.1
-    #action = np.array([0,0,0,0,0,0,0])
+    action = np.array([0,0,0,0,0,0,0])
     action = np.random.randn(7) * 1
+    #action[6] = -1#np.random.normal(loc=0.0, scale=0.044)#0
     #print(f'action:{action}')
     obs, reward, done, info = env.step(action)  # take action in the environment
     env.render()  # render on display

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mujoco model="X5A_base">
+    <compiler angle="radian" meshdir="robots/X5A/meshes"/>
+    <asset>
+        <mesh name="base_link" file="base_link.STL"/>
+    </asset>
+    <worldbody>
+        <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.75294 0.75294 0.75294 1" mesh="base_link"/>
+        <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="base_link"/>
+        <body name="base" pos="0 0 0">
+            <inertial pos="-3.0001E-05 3.0589E-05 0.027324" mass="0.43995" diaginertia="0.00017 0.00017 0.00016"/>
+            <!-- base_site是机器人的参考点，用于位置定位和控制 -->
+            <site name="base_site" pos="0 0 0" size="0.01" rgba="1 0 0 1"/>
+        </body>
+    </worldbody>
+</mujoco> 

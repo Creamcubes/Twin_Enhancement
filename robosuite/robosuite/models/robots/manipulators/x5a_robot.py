@@ -6,7 +6,7 @@ from robosuite.utils.mjcf_utils import xml_path_completion
 
 class X5A(ManipulatorModel):
     """
-    Panda is a sensitive single-arm robot designed by Franka.
+    X5A is a 6-DOF robotic arm.
 
     Args:
         idn (int or str): Number or some other unique identification string for this robot instance
@@ -19,7 +19,7 @@ class X5A(ManipulatorModel):
         #super().__init__(xml_path_completion("robots/X5/X5.xml"), idn=idn)
 
         # Set joint damping
-        self.set_joint_attribute(attrib="damping", values=np.array((0.1, 0.1, 0.1, 0.1, 0.1)))
+        self.set_joint_attribute(attrib="damping", values=np.array((0.1, 0.1, 0.1, 0.1, 0.1, 0.1)))
 
     @property
     def default_base(self):
@@ -35,8 +35,8 @@ class X5A(ManipulatorModel):
 
     @property
     def init_qpos(self):
-        return np.array([0, np.pi / 16.0, 0.00, -np.pi / 2.0 - np.pi / 3.0, 0.00, np.pi - 0.2, np.pi / 4])
-
+        return np.array([0, np.pi / 16.0, 0.00, -np.pi / 2.0 - np.pi / 3.0, 0.00, np.pi - 0.2])
+        #return np.array([0, np.pi / 16.0, 0.00, -np.pi / 2.0 - np.pi / 3.0, 0.00, np.pi - 0.2, np.pi / 4])
     @property
     def base_xpos_offset(self):
         return {

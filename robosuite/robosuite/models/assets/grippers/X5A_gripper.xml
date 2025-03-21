@@ -20,16 +20,17 @@
       <geom type="mesh" rgba="0.89804 0.91765 0.92941 1" mesh="link6"/> -->
       <body name="leftfinger" pos="0.08657 0.024896 -0.0002436">
         <inertial pos="-0.00035522 -0.007827 -0.0029883" quat="0.5 0.5 0.5 0.5" mass="0.064798" diaginertia="3e-05 3e-05 2e-05"/>
-        <joint name="finger_joint2" pos="0 0 0" axis="0 -1 0" type="slide" range="-0.044 0" actuatorfrcrange="-100 100"/>
+        <!-- <joint name="finger_joint1" pos="0 0 0" axis="0 1 0" type="slide" range="-0.044 0" actuatorfrcrange="-100 100"/> -->
+        <joint name="finger_joint1" pos="0 0 0" axis="0 1 0" type="slide" range="0 0.044" actuatorfrcrange="-100 100"/>
         <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="link7"/>
-        <geom type="mesh" rgba="1 1 1 1" mesh="link7"/>
+        <!-- <geom type="mesh" rgba="1 1 1 1" mesh="link7"/> -->
       </body>
       <body name="rightfinger" pos="0.08657 -0.0249 -0.00024366">
         <inertial pos="-0.00035522 0.0078277 0.0024201" quat="0.5 0.5 0.5 0.5" mass="0.064798" diaginertia="3e-05 3e-05 2e-05"/>
-        <joint name="finger_joint1" pos="0 0 0" axis="0 1 0" type="slide" range="0 0.044" actuatorfrcrange="-100 100"/>
-        
+        <!-- <joint name="finger_joint2" pos="0 0 0" axis="0 1 0" type="slide" range="0 0.044" actuatorfrcrange="-100 100"/> -->
+        <joint name="finger_joint2" pos="0 0 0" axis="0 -1 0" type="slide" range="-0.044 0" actuatorfrcrange="-100 100"/>
         <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="link8"/>
-        <geom type="mesh" rgba="1 1 1 1" mesh="link8"/>
+        <!-- <geom type="mesh" rgba="1 1 1 1" mesh="link8"/> -->
       </body>
     </body>
   </worldbody>

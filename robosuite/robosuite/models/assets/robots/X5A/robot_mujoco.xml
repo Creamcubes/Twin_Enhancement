@@ -7,7 +7,7 @@
     <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint3" name="torq_j3"/>
     <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint4" name="torq_j4"/>
     <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint5" name="torq_j5"/>
-    <!-- <motor ctrllimited="true" ctrlrange="-12.0 12.0" joint="joint6" name="torq_j6"/> -->
+    <motor ctrllimited="true" ctrlrange="-12.0 12.0" joint="joint6" name="torq_j6"/>
     <!-- <motor ctrllimited="true" ctrlrange="-12.0 12.0" joint="joint7" name="torq_j7"/> -->
   </actuator>
   <asset>
@@ -23,9 +23,10 @@
   </asset>
 
   <worldbody>
-    <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.75294 0.75294 0.75294 1" mesh="base_link"/>
-    <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="base_link"/>
     <body name="base" pos="0 0 0">
+      <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.75294 0.75294 0.75294 1" mesh="base_link"/>
+      <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="base_link"/>
+    
       <site name="right_center" pos="0 0 0" size="0.01" rgba="1 0.3 0.3 1" group="2"/>
       <!-- robot view -->
       <camera mode="fixed" name="robotview" pos="1.0 0 0.4" quat="0.653 0.271 0.271 0.653"/>
@@ -56,11 +57,11 @@
                 <joint name="joint5" pos="0 0 0" axis="0 0 1" range="-10 10" actuatorfrcrange="-100 100"/>
                 <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.69804 0.69804 0.69804 1" mesh="link5"/>
                 <geom type="mesh" rgba="0.69804 0.69804 0.69804 1" mesh="link5"/>
-                <!-- <body name="link6" pos="0.02895 0 0.0865" quat="-3.67321e-06 -1 0 0">
+                <body name="link6" pos="0.02895 0 0.0865" quat="-3.67321e-06 -1 0 0">
                   <inertial pos="0.041697 2.4368e-05 0.00014464" quat="0.5 0.5 -0.5 0.5" mass="0.44089" diaginertia="0.0005 0.00038 0.00028"/>
                   <joint name="joint6" pos="0 0 0" axis="1 0 0" range="-10 10" actuatorfrcrange="-100 100"/>
                   <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.89804 0.91765 0.92941 1" mesh="link6"/>
-                  <geom type="mesh" rgba="0.89804 0.91765 0.92941 1" mesh="link6"/> -->
+                  <geom type="mesh" rgba="0.89804 0.91765 0.92941 1" mesh="link6"/>
                   <!-- <body name="link7" pos="0.08657 0.024896 -0.0002436">
                     <inertial pos="-0.00035522 -0.007827 -0.0029883" quat="0.5 0.5 0.5 0.5" mass="0.064798" diaginertia="3e-05 3e-05 2e-05"/>
                     <joint name="joint7" pos="0 0 0" axis="0 1 0" type="slide" range="0 0.044" actuatorfrcrange="-100 100"/>
@@ -73,7 +74,7 @@
                     <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="1 1 1 1" mesh="link8"/>
                     <geom type="mesh" rgba="1 1 1 1" mesh="link8"/>
                   </body> -->
-                  <body name="right_hand" pos="0 0 0.1065" quat="0.924 0 0 -0.383">
+                  <body name="right_hand" pos="0 0 0" quat="1 0 0 0">
                       <!-- This sites were added for visualization. They are all standardized between models-->
                       <!-- Position mimics the gripper attachment point (right_hand) -->
                       <!--  Y-axis should be perpendicular to grasping motion, and Z-axis should point out of the robot eef -->
@@ -85,7 +86,7 @@
                       <camera mode="fixed" name="eye_in_hand" pos="0.05 0 0" quat="0 0.707108 0.707108 0" fovy="75"/>
                       <!-- to add gripper -->
                   </body>
-                <!-- </body> -->
+                </body>
               </body>
             </body>
           </body>

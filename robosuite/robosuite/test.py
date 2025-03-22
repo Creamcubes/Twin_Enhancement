@@ -24,7 +24,7 @@ for i in range(100000):
     # 使用正确的维度：6个机械臂关节+1个夹爪控制=7个自由度
     action = np.array([0,0,0,0,0,0,0])
     action = np.random.randn(7) * 1 # 降低随机动作的幅度以确保安全
-    #action[6] = np.random.normal(loc=0.0, scale=0.044)#0
+    #action[6] = -1#np.random.normal(loc=0.0, scale=0.044)#0
     #print(f'action:{action}')
     obs, reward, done, info = env.step(action)  # take action in the environment
     env.render()  # render on display

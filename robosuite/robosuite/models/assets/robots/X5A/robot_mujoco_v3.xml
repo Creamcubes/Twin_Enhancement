@@ -2,26 +2,12 @@
   <compiler angle="radian" meshdir="C:\Users\86136\anaconda3\envs\robosuite\Lib\site-packages\robosuite\models\assets\robots\X5A\meshes\"/>
   <actuator>
     <!-- Physical limits of the actuator. -->
-    <motor  joint="joint1" name="torq_j1"/>
-    <motor  joint="joint2" name="torq_j2"/>
-    <motor  joint="joint3" name="torq_j3"/>
-    <motor  joint="joint4" name="torq_j4"/>
-    <motor  joint="joint5" name="torq_j5"/>
-    <motor  joint="joint6" name="torq_j6"/>
-    
-    <!-- <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint1" name="torq_j1"/>
+    <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint1" name="torq_j1"/>
     <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint2" name="torq_j2"/>
     <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint3" name="torq_j3"/>
     <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint4" name="torq_j4"/>
     <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint5" name="torq_j5"/>
-    <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="joint6" name="torq_j6"/> -->
-
-    <!-- <motor ctrllimited="true" ctrlrange="-10.0 10.0"  forcelimited="true"  forcerange="-100.0 100.0" joint="joint1" name="torq_j1"/>
-    <motor ctrllimited="true" ctrlrange="-10.0 10.0"  forcelimited="true"  forcerange="-100.0 100.0" joint="joint2" name="torq_j2"/>
-    <motor ctrllimited="true" ctrlrange="-10.0 10.0"  forcelimited="true"  forcerange="-100.0 100.0" joint="joint3" name="torq_j3"/>
-    <motor ctrllimited="true" ctrlrange="-10.0 10.0"  forcelimited="true"  forcerange="-100.0 100.0" joint="joint4" name="torq_j4"/>
-    <motor ctrllimited="true" ctrlrange="-10.0 10.0"  forcelimited="true"  forcerange="-100.0 100.0" joint="joint5" name="torq_j5"/>
-    <motor ctrllimited="true" ctrlrange="-10.0 10.0"  forcelimited="true"  forcerange="-100.0 100.0" joint="joint6" name="torq_j6"/> -->
+    <motor ctrllimited="true" ctrlrange="-12.0 12.0" joint="joint6" name="torq_j6"/>
     <!-- <motor ctrllimited="true" ctrlrange="-12.0 12.0" joint="joint7" name="torq_j7"/> -->
   </actuator>
   <asset>
@@ -38,7 +24,7 @@
 
   <worldbody>
   <!-- body的pos是在世界坐标系的绝对位置(3D 空间中的位置，表示 body 的中心点) -->
-    <body name="base" pos="0 0 0">
+    <body name="base" pos="-3.0001E-05 3.0589E-05 0.027324">
       <geom type="mesh" contype="0" conaffinity="0" group="1"  rgba="0.75294 0.75294 0.75294 1" mesh="base_link"/>
       <!-- <geom type="mesh" rgba="0.75294 0.75294 0.75294 1" mesh="base_link"/> -->
     

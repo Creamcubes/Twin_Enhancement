@@ -22,7 +22,7 @@ for i in range(100000):
     #print(f'shape:{env.action_spec[0].shape}')
     #action = np.random.randn(*env.action_spec[0].shape) * 0.1
     # 使用正确的维度：6个机械臂关节+1个夹爪控制=7个自由度
-    action = np.array([0,0,0,0,0,0,0])
+    action = np.array([0.5,0.5,-0.5,1,0,0,-1])
     action = np.random.randn(7) * 1 # 降低随机动作的幅度以确保安全
     #action[6] = -1#np.random.normal(loc=0.0, scale=0.044)#0
     #print(f'action:{action}')
